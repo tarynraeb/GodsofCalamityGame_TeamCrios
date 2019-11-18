@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="GodsOfCalamity.MeteorUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GodsOfCalamity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
+    mc:Ignorable="d"
+    d:DesignHeight="128"
+    d:DesignWidth="128">
+
+    <Canvas x:Name="MeteorImage" Width="128" Height="128" gaze:GazeInput.Interaction="Enabled">
+        <Button HorizontalAlignment="Left" Height="128" Margin="0,0,0,0" VerticalAlignment="Center" Width="128" Background="Transparent">
+            <gaze:GazeInput.GazeElement>
+                <gaze:GazeElement StateChanged="GazeElement_StateChanged" DwellProgressFeedback="OnInvokeProgress"/>
+            </gaze:GazeInput.GazeElement>
+        </Button>
+        <Canvas.Background>
+            <ImageBrush ImageSource="Assets\Meteor.png"/>
+        </Canvas.Background>
+    </Canvas>
+    
+</UserControl>

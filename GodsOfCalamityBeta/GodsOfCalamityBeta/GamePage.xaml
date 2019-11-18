@@ -1,0 +1,23 @@
+<Page
+    x:Class="GodsOfCalamityBeta.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GodsOfCalamityBeta"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
+    gaze:GazeInput.Interaction="Enabled"
+    gaze:GazeInput.IsCursorVisible="True"
+    mc:Ignorable="d">
+
+    <SwapChainPanel x:Name="swapChainPanel" AllowFocusWhenDisabled="True">
+        <Canvas x:Name="GameSpace">
+            <Button x:Name="Village" Background="Transparent">
+                <gaze:GazeInput.GazeElement>
+                    <gaze:GazeElement DwellProgressFeedback="OnInvokeProgress" StateChanged="Village_Click"/>
+                </gaze:GazeInput.GazeElement>
+            </Button>
+        </Canvas>
+    </SwapChainPanel>
+
+</Page>

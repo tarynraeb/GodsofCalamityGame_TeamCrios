@@ -1,0 +1,48 @@
+<Page
+    x:Class="GodsOfCalamity.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GodsOfCalamity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
+    gaze:GazeInput.Interaction="Enabled"
+    gaze:GazeInput.IsCursorVisible="True">
+
+    <SwapChainPanel x:Name="swapChainPanel" Width="1920" Height="1080" >
+        <Grid
+            HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
+
+            <Canvas x:Name="GameSpace"
+                    Grid.Column="3">
+                <Button x:Name="PauseButton" Width="368" Height="100" HorizontalAlignment="Left" 
+                        VerticalAlignment="Top" Content="Pause Game" Click="PauseButton_Click" Canvas.Left="770" Canvas.Top="970" FontSize="48" FontFamily="Old English Text MT" Margin="0,0,0,0"/>
+                <Button x:Name="Village" Height="256" Canvas.Left="832" Canvas.Top="412" Width="256" Background="Transparent">
+                    <Image Source="Assets/Village.png"/>
+                    <gaze:GazeInput.GazeElement>
+                        <gaze:GazeElement DwellProgressFeedback="OnInvokeProgress" StateChanged="HealthHandler"/>
+                    </gaze:GazeInput.GazeElement>
+                </Button>
+                <Canvas>
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="Assets/Map.png"/>
+                    </Canvas.Background>
+                </Canvas>
+                <TextBlock x:Name="HealthBlock" Canvas.Left="884" Canvas.Top="320" Text="100" TextWrapping="Wrap" Height="80" Width="142" FontSize="72" TextAlignment="Center" FontFamily="Old English Text MT" Margin="0,0,0,0" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <Canvas.Resources>
+                    <Storyboard x:Name="Move"/>
+
+
+                </Canvas.Resources>
+                <Canvas.Background>
+                    <ImageBrush ImageSource="Assets/Map.png"/>
+                </Canvas.Background>
+
+            </Canvas>
+
+        </Grid>
+    </SwapChainPanel>
+
+
+</Page>
